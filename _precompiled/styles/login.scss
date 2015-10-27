@@ -1,0 +1,87 @@
+/* Here are the styles for the default landing page*/
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(../fonts/Roboto/Roboto-Thin.ttf);
+}
+body{
+	font-family: Roboto-Light;
+}
+.loginContainer{
+    background-color: #C586F9;
+    /*background-color: white;*/
+}
+.loginForm{
+	width: 30%;
+	margin:0 auto;
+  border-radius: 4px;
+  /*background-color: rgba(255, 255, 240, 0.7);*/
+  background-color: #ececec;
+}
+.loginInput{
+	display:block;
+	margin:0 auto;
+  border: none;
+}
+.loginLogo{
+	text-align: center;
+	font-size: 4em;
+	margin: 50px 0 20px 0;
+	font-family: Roboto-Thin;
+}
+.formContainer{
+	padding: 1.8em 0 3em 0;
+	text-align: center;
+  border-radius: 3px;
+}
+.formHead{
+
+	font-size: 2em;
+	text-align: center;
+	color: black;
+	padding:25px 0;
+	font-family: Roboto-Thin;
+  display: inline;
+}
+.loginInput{
+	font-size: 1.2em;
+	/*border:1px solid black;*/
+	padding: 12px 15px;
+	width: 65%;
+	margin: 20px auto;
+	font-family: Roboto-Light;
+}
+/*Styles for different modes of the submit button*/
+.loginButton{
+	background-color: rgb(221, 221, 221);
+}
+.loginButton:hover{
+	background-color: rgb(200,200,200);
+}
+.loginInput:focus{
+	outline: 0;
+}
+.forgotPass{
+	color:black;
+}
+.forgotPass:hover{
+	color: black;
+	margin:0 auto;
+}
+.login-inputs{
+  /*border: 1px soli;*/
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.login-logo{
+  width: 8%;
+  margin-right: 0.1em;
+}
+::-webkit-input-placeholder {
+  color: black;
+  font-family: Roboto-Thin;
+}

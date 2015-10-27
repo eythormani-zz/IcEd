@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(../assets/fonts/Roboto/Roboto-Light.ttf); }
+/* Body displays in flex column for footer nav and main*/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #C586F9;
+  /* þeta fuckar öllu upp ....*/
+  /*align-items: center;*/ }
+
+/* Body End*/
+/* Nav Start*/
+nav #navul {
+  width: 100%;
+  display: flex;
+  background-color: #7521B9;
+  height: 50px;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+  padding: 12px;
+  font-family: Roboto-Light; }
+
+nav #navul li {
+  font-weight: 800px;
+  font-size: 20px;
+  margin-left: 15px; }
+
+/*nav #navul li a{
+    color: white;
+    text-decoration: none;
+}
+nav #navul li a:hover{
+    text-decoration: none;
+    color: white;
+}*/
+#search {
+  font-weight: 800px;
+  border: none;
+  font-size: 16px;
+  background-color: #C586F9;
+  height: 25px;
+  padding: 3px;
+  color: white;
+  width: 400px; }
+
+::-webkit-input-placeholder {
+  color: white; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white; }
+
+:-ms-input-placeholder {
+  color: white; }
+
+#search:focus {
+  outline: 0; }
+
+.icon {
+  color: white; }
+
+.searchDiv {
+  display: flex;
+  justfy-content: center;
+  align-items: center; }
+
+/* some flexbox dropdown attempts*/
+#drop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: absolute;
+  top: 57px;
+  right: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  border: 4px solid #7521B9;
+  padding: 5px;
+  /* trasition styles*/
+  display: none;
+  background-color: #C586F9;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s; }
+
+#drop li {
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: all linear 0.1s;
+  display: block;
+  color: white;
+  margin-top: 5px;
+  /*border-bottom: 1px solid black;*/
+  width: 100%; }
+
+#drop li:last-child {
+  border: none; }
+
+#drop li a {
+  align-items: flex-start;
+  color: white;
+  display: flex;
+  max-width: 130px;
+  text-decoration: none;
+  transition: all linear 0.1s;
+  display: block;
+  margin: 0 auto; }
+
+li:hover #drop {
+  display: flex; }
+
+.arrow {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 52px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  display: none;
+  border-bottom: 5px solid #7521B9; }
+
+li:hover .arrow {
+  display: block; }
+
+/* Nav End */
+/* Main Start */
+#main {
+  border: 0 1px solid black;
+  width: 800px;
+  margin: 0 auto; }
+
+.text {
+  width: 60%; }
+
+/* Main End */
+/* Footer Start*/
+footer {
+  display: flex;
+  background-color: #7521B9;
+  height: 50px;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+  padding: 12px;
+  font-family: Roboto-Light; }
+
+/* Footer End*/
+/* Here are the styles for the default landing page*/
+@font-face {
+  font-family: Roboto-Light;
+  src: url(../fonts/Roboto/Roboto-Light.ttf); }
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(../fonts/Roboto/Roboto-Thin.ttf); }
+body {
+  font-family: Roboto-Light; }
+
+.loginContainer {
+  background-color: #C586F9;
+  /*background-color: white;*/ }
+
+.loginForm {
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 4px;
+  /*background-color: rgba(255, 255, 240, 0.7);*/
+  background-color: #ececec; }
+
+.loginInput {
+  display: block;
+  margin: 0 auto;
+  border: none; }
+
+.loginLogo {
+  text-align: center;
+  font-size: 4em;
+  margin: 50px 0 20px 0;
+  font-family: Roboto-Thin; }
+
+.formContainer {
+  padding: 1.8em 0 3em 0;
+  text-align: center;
+  border-radius: 3px; }
+
+.formHead {
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  padding: 25px 0;
+  font-family: Roboto-Thin;
+  display: inline; }
+
+.loginInput {
+  font-size: 1.2em;
+  /*border:1px solid black;*/
+  padding: 12px 15px;
+  width: 65%;
+  margin: 20px auto;
+  font-family: Roboto-Light; }
+
+/*Styles for different modes of the submit button*/
+.loginButton {
+  background-color: #dddddd; }
+
+.loginButton:hover {
+  background-color: #c8c8c8; }
+
+.loginInput:focus {
+  outline: 0; }
+
+.forgotPass {
+  color: black; }
+
+.forgotPass:hover {
+  color: black;
+  margin: 0 auto; }
+
+.login-inputs {
+  /*border: 1px soli;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.login-logo {
+  width: 8%;
+  margin-right: 0.1em; }
+
+::-webkit-input-placeholder {
+  color: black;
+  font-family: Roboto-Thin; }
+
+#searchContainer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  width: 40%; }
+
+#searchContainer img {
+  min-width: 70%; }
+
+.uploadFormInput {
+  margin: 10px;
+  width: 100%; }
+
+.uploadForm {
+  width: 800px; }

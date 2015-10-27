@@ -1,0 +1,26 @@
+*Mætingu á Forritunarkvöld hefur farið hrakandi, eigum við að gera eitthvað í því, hvað?
+*NUTS talaði við mig áðan um að halda Forritunarkeppni Grunnskólanna
+	*Eigum við að gera það
+	*Hvernig eigum við að halda utanum það
+	*Hvaða tungumál eigum við að nota
+	*Hvernig dæmi eigum við að hafa
+Það eina sem er ákveðið varðandi þessa keppni er að það á að vera "bootkamp" í forritun eitthverja helgi áður en að keppnin á sér stað. Þetta á að vera til þess að við getum kennt þeim sem hafa áhuga á að taka þátt í keppninni að forrita alveg frá grunni.
+Annars getum við fengið að ákveða:
+	*í hvaða formi keppnin á að vera
+	*Hvar hún á að eiga sér stað
+	*Hvort það eiga að að vara eitthver verðlaun
+	*Hvort það eiga að vera styrktaraðilar
+	*eigum við að taka eitthverja fleiri inn til þess að sjá um keppnina
+	*eigum við að taka inn eitthvern  nýnema sem tengilið við þá
+	*
+Þetta er það helsta sem verður rætt á morgun en síðan er hægt að tala um eitthvað annað sem þarf að skoða líka
+
+C#C#C#C#C#C#C#C#;
+for (var i = 0; i < 100; i++) {
+	Console.Writeline("eyþór numer " + i + " er fáviti");
+}
+Console.Writeline("Forritið er buið að keyra og nuna veistu að eyþór frá 1 og uppi 100 er fáviti right?");
+Console.Write("Veldu eyþór numer hvað?");
+var numer = Convert.Toint32(Console.Readline());
+Console.Writleine
+
