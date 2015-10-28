@@ -1,11 +1,18 @@
-<?php 
+<?php
 	require 'assets/php/dbCon.php';
 	require 'assets/php/getID.php';
-	$id = kennitala($_SESSION['username']);	
+	$id = kennitala($_SESSION['username']);
 	$SQL = "SELECT name, address, email, phone FROM users WHERE ID = $id";
 	$logon = $pdo->prepare($SQL);
 	$logon->execute();
 	$returnedData = $logon->fetch();
+
+
+	 // if the change info button if pressed
+	 if (isset($_POST['EXEC'])) {
+	 		require 'assets/php/phpfunctions.php';
+			ChangeUserData($_POST);
+	 }
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,28 +25,29 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./assets/style/main.css" media="screen" title="no title" charset="utf-8">
-	<title>Stillingar fyrir notenda</title>
+	<title>Stillingar fyrir notendur</title>
 </head>
-<body>
+<body id="bodyUserSettings">
 	<nav id="navigation"></nav>
 	<div id="main">
-		<form action="userSettings.php" method="POST">
-			<input class="form-control" type="text" name="name" value="<?php  ?>">
-			<input class="form-control" type="text" name="address" value="<?php  ?>">
-			<input class="form-control" type="text" name="email" value="<?php  ?>">
-			<input class="form-control" type="text" name="phone" value="<?php  ?>">
+		<h1>Hérna eru þínar upplýsingar</h1>
+		<form action="userSettings.php" method="POST" id="userinfo">
+			<input class="form-control" type="text" name="name" value="<?php echo $returnedData['name'] ?>">
+			<input class="form-control" type="text" name="address" value="<?php echo $returnedData['address'] ?>">
+			<input class="form-control" type="text" name="email" value="<?php echo $returnedData['email'] ?>">
+			<input class="form-control" type="text" name="phone" value="<?php echo $returnedData['phone'] ?>">
+			<input type="submit" name="EXEC" value="Breyta upplýsingum">
 		</form>
-		<div id="searchContainer">
-			
-		</div>
+		<h1>Breyttu þeim fögum sem þú kennir</h1>
+		<form class="" action="index.html" method="post">
+
+		</form>
 	</div>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="./assets/js/main.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script type="text/javascript">
-		
-	</script>		
+
+	</script>
 </body>
 
 </html>
-
-lala.lala

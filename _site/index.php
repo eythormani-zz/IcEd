@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$error = null;
 	session_start();
 	if (isset($_SESSION['username'])) {
@@ -10,7 +10,7 @@
 
     $kennitala = $_POST['kennitala'];
     $password = $_POST['password'];
-    $sql = "SELECT salt, password, kennitala FROM users WHERE kennitala=:username LIMIT 1";
+    $sql = "SELECT salt, password, kennitala,id FROM users WHERE kennitala=:username LIMIT 1";
 
     try {
     	$logon = $pdo->prepare($sql);
@@ -24,22 +24,15 @@
     } catch (Exception $e) {
     	throw $e;
     }
-
     $Blowfish_Pre = '$2a$05$';
-
     $Blowfish_End = '$';
-
     $salt = $returnedData['salt'];
-
     $dbUsername = $returnedData['kennitala'];
     $dbPassword = $returnedData['password'];
+		$dbid = $returnedData['id'];
     $hashpass = crypt($password, $Blowfish_Pre . $salt . $Blowfish_End);
-    // echo $dbUsername;
-    // echo $dbPassword;
-    // echo $username;
-    // echo $password;
 	    if ($hashpass == $dbPassword && $dbUsername == $kennitala) {
-	      $_SESSION['username'] = $kennitala;
+	      $_SESSION['username'] = $dbid;
 	      header("Location:front.php");
 	    }
 	    else{
@@ -78,7 +71,7 @@
 		</form>
 		</div>
 	</div>
-	<?php 
+	<?php
 		if ($error == '<script type="text/javascript">alert("Rangt notendanafn eða lykilorð")</script>') {
 			echo $error;
 		}

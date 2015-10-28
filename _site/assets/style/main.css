@@ -307,3 +307,25 @@ body {
 
 .uploadForm {
   width: 800px; }
+
+#bodyUserSettings h1 {
+  font-size: 27px;
+  text-align: center;
+  font-weight: 800px;
+  margin: 8px; }
+
+#bodyUserSettings form input {
+  margin-top: 10px;
+  max-width: 40%; }
+
+#bodyUserSettings form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#bodyUserSettings form button {
+  border-radius: 5px;
+  border: none;
+  align-self: flex-start;
+  margin-top: 12px; }
