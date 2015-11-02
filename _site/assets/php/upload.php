@@ -12,15 +12,14 @@ if (isset($_POST['name'])) {
   $target_file = time(). basename($_FILES["fileToUpload"]["name"]);
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
   // Allow certain file formats
-/*  $uploadOk = 0;
+ $uploadOk = 0;
   for ($i=0; $i < sizeof($AllowedFormats); $i++) {
     if ($imageFileType == $AllowedFormats[$i]) {
       $uploadOk = 1;
       break;
     }
-  }*/
+  }
   if ($uploadOk == 0) {
     echo "Sorry only ";
     foreach ($AllowedFormats as $key) {
@@ -62,7 +61,8 @@ if (isset($_POST['name'])) {
     $sql = "INSERT INTO uploads(name,location,description,size,format,userID)VALUES
     ('$name','$location','$description','$size','$format','$userID')";
     $pdo -> query($sql);
-    // header("Location: http://iced.is/front.php");
+
   }
 }
+header("Location: http://iced.is/front.php");
 ?>

@@ -1,7 +1,7 @@
 {
   "name": "IcEd",
   "version": "0.0.1",
-  "description": "Lokaverkefni Grunndeildar tölvubrautar haust 2015 - Skráardeilingarsíða fyrir kennara.",
+  "description": "Lokaverkefni Grunndeildar tölvubrautar haust 2015 - Skráardeilingarsíða fyrir kennara. Aiming at the betterment of material for teachers around the globe",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

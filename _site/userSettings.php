@@ -1,8 +1,8 @@
 <?php
+	require 'assets/php/kickOut.php';
 	require 'assets/php/dbCon.php';
-	require 'assets/php/getID.php';
-	$id = kennitala($_SESSION['username']);
-	$SQL = "SELECT name, address, email, phone FROM users WHERE ID = $id";
+	$id = $_SESSION['username'];
+	$SQL = "SELECT name, address, email, phone FROM users WHERE id = $id";
 	$logon = $pdo->prepare($SQL);
 	$logon->execute();
 	$returnedData = $logon->fetch();

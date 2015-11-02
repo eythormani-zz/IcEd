@@ -5,3 +5,29 @@
 .uploadForm{
 	width:800px;
 }
+.chosenTag{
+	display: inline-block;
+	padding:10px 30px 10px 10px;
+	margin:3px;
+	border:1px solid black;
+	border-radius: 3px;
+	position: relative;
+}
+.deleteTag{
+	position: absolute;
+	top:10px;
+	right:8px;
+}
+
+.deleteTag:hover{
+	cursor: pointer;
+}
+#main h1{
+  font-size: 27px;
+  text-align: center;
+  margin: 8px;
+}
+.uploadCheckbox{
+	display: inline-block;
+	margin: 0 10px;
+}

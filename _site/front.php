@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'assets/php/kickOut.php';
 ?>
 <!DOCTYPE html>
@@ -18,9 +18,12 @@ require 'assets/php/kickOut.php';
 <body>
 	<nav id="navigation"></nav>
 	 <div id ="main"><!--display search results-->
-	 <div id="searchContainer">
-		<img src="/assets/img/logo-white.png" alt="">
-		<ul>	
+		 <p style="text-align:center; font-size:25px;">
+			 	1984 Want's it's under construction sign back
+		 </p>
+	 <!-- <div id="searchContainer"> -->
+		<!-- <img src="/assets/img/logo-white.png" alt="">
+		<ul>
 			<li>Here is the title</li>
 			<li>Here is some information about the project. This column has got no pun intended</li>
 			<li><span>USER</span><span>	Time uploaded</span></li>
@@ -34,7 +37,7 @@ require 'assets/php/kickOut.php';
 	 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</footer>
+	</footer> -->
 
 
 	<!-- Latest compiled and minified JavaScript -->
