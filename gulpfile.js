@@ -23,7 +23,7 @@
   // for use with javascript. if you want a file linked to html, add it to this array of js files.
   // the order within the array defines where in line it will be linked to html.(it wont really get linked but it workes the same)
   gulp.task('scripts', function() {
-    return gulp.src(['./_precompiled/scripts/javascripts/jquery.js','./_precompiled/scripts/javascripts/jquery.js', './_precompiled/scripts/javascripts/main.js'])
+    return gulp.src(['./_precompiled/scripts/javascripts/jquery.js','./_precompiled/scripts/javascripts/main.js','./_precompiled/scripts/javascripts/jquery_ui.js'])
       .pipe(concat('main.js'))
       .pipe(gulp.dest('./_site/assets/js/'));
   });

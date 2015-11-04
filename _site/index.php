@@ -67,7 +67,7 @@
 				<input class="loginInput" type="password" name="password" placeholder="Lykilorð">
 				<button class="loginInput loginButton" type="submit">Innskrá</button>
 			</div>
-			<a href="forgottenPassword.html" class="forgotPass">Gleymt Lykilorð?</a>
+			<a href="recover.php" class="forgotPass">Gleymt Lykilorð?</a>
 		</form>
 		</div>
 	</div>

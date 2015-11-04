@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+</html>
 <?php
 require 'kickOut.php';
 require 'dbCon.php';
@@ -20,4 +30,15 @@ function ChangeUserData($changedData){
 		$variable = $pdo -> prepare($SQL);
 		$variable -> execute();
 	}
+function checkTagExist($userinput, $icelandicLetters){
+	// Get essential database connections
+	require 'dbCon.php';
+	// forge the query
+	$SQL = "SELECT name ID FROM tags where name like '".$userinput."%' LIMIT 1";
+	$query = $pdo -> prepare($SQL);
+	$row = $query -> execute();
+	$return = [$row['name'],$row['ID']];
+	echo $return;
+}
+
 ?>

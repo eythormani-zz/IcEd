@@ -1,9 +1,0 @@
-@import 'reset';
-@import 'default';
-@import 'login';
-@import 'resaults';
-.tempUpload{
-	margin-top: 1em;
-}
-.tempStyle{
-	margin-top: 0em

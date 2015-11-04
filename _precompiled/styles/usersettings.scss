@@ -1,30 +1,53 @@
-
-
-
-body{   // the body tag inside the usersettings page
-
-  }
-
 #main h1{
   font-size: 27px;
-  text-align: center;
-  font-weight: 800px;
   margin: 8px;
 }
-#bodyUserSettings form input{
-    margin-top: 10px;
-    max-width: 40%;
+.allSubjects{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
-#bodyUserSettings form{
+.allGrades{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#bodyUserSettings #form{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
 }
-#bodyUserSettings form button{
+#bodyUserSettings #form button{
   border-radius: 5px;
   border:none;
   align-self: flex-start;
   margin-top: 12px;
+}
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display: inline-block;
+    padding:10px;
+    margin:3px;
+    border:1px solid black;
+    border-radius: 3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input[type="checkbox"]:checked + label span{
+    background-color: #B15FF3;
+}
+.chosenTag{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

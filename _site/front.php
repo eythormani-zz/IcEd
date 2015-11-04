@@ -18,9 +18,10 @@ require 'assets/php/kickOut.php';
 <body>
 	<nav id="navigation"></nav>
 	 <div id ="main"><!--display search results-->
-		 <p style="text-align:center; font-size:25px;">
-			 	1984 Want's it's under construction sign back
+		 <p style="text-align:center; font-size:25px; margin:12px;">
+			 	1984 Wants it's under construction sign back
 		 </p>
+		 <img src="assets/img/under.jpg" style="text-align:center; border-radius: 10px; box-shadow: 3px 3px 3px grey;">
 	 <!-- <div id="searchContainer"> -->
 		<!-- <img src="/assets/img/logo-white.png" alt="">
 		<ul>

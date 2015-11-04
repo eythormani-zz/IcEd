@@ -2,7 +2,7 @@
 // checks if session is in place and places the user in an apropriate pos acording to that
 require 'kickOut.php';
 require 'dbCon.php';
-require 'getID.php';
+$returnArrayToAjax = array();
 // get the user id for the upload and store it in a varible;
 $id = $_SESSION['username'];
 if (isset($_POST['name'])) {
@@ -13,7 +13,7 @@ if (isset($_POST['name'])) {
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
   // Allow certain file formats
- $uploadOk = 0;
+  $uploadOk = 0;
   for ($i=0; $i < sizeof($AllowedFormats); $i++) {
     if ($imageFileType == $AllowedFormats[$i]) {
       $uploadOk = 1;
@@ -21,29 +21,21 @@ if (isset($_POST['name'])) {
     }
   }
   if ($uploadOk == 0) {
-    echo "Sorry only ";
-    foreach ($AllowedFormats as $key) {
-     echo $key . ",  ";
-    }
-    echo " allowed <br>";
+    $returnArrayToAjax['incorrectFormat'] = "Það má ekki setja inn skrár af þessari gerð";
   }
-  // if($imageFileType != "pdf" && $imageFileType != "txt") {
-  //     echo "Sorry, only PDF and txt files are allowed.";
-  //     $uploadOk = 0;
-  // }
 
 
 
   // Check if $uploadOk is set to 0 by an error. if it is ok ... upload
   if ($uploadOk == 0) {
-      echo "your file was not uploaded.";
+    $returnArrayToAjax['noError'] = "Við náðum ekki að setja inn skránna og við vitum ekki afhverju, afsakið þetta";
   // if everything is ok, try to upload file
   }
   else {
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],"../../uploads/". $target_file)) {
-          echo '<script>alert("File Uploaded", "."The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.".", "success")</script>';
+        $returnArrayToAjax['allIsWell'] = "Verkefni móttekið";
       } else {
-          echo "Sorry, there was an error uploading your file.";
+        $returnArrayToAjax['unableToMove'] = "Verkefni móttekið";
           $uploadOk = 0;
       }
   }
@@ -53,16 +45,29 @@ if (isset($_POST['name'])) {
     $name = $_POST['name'];
     $location = $target_file;
     $description = $_POST['description'];
+
     // $length  later
     $size = $_FILES["fileToUpload"]["size"];
     $format = $imageFileType;
     $userID = $id;
+    //variables used for categorizing
+    $subject = $_POST['subject'];
+    $grades = $_POST['grades'];
 
-    $sql = "INSERT INTO uploads(name,location,description,size,format,userID)VALUES
-    ('$name','$location','$description','$size','$format','$userID')";
+    //inserts the actual project
+    $sql = "INSERT INTO uploads(name,location,description,size,format,userID, subjectID) VALUES ('$name','$location','$description','$size','$format','$userID', '$subject')";
     $pdo -> query($sql);
-
+    //gets the ID of the insertet upload
+    $lastID = $pdo->lastInsertId();
+    $returnArrayToAjax['uploadID'] = $lastID;
+    //links the upload to the appropriate grades
+    foreach ($grades as $temp) {
+      $SQL = "INSERT INTO uploadGrades (gradeID, uploadID) VALUES (" . $temp . ", " . $lastID . ")";
+      $logon = $pdo->prepare($SQL);
+      $logon->execute();
+    } 
+    print $returnArrayToAjax['uploadID'];
   }
 }
-header("Location: http://iced.is/front.php");
+//header("Location: http://iced.is/front.php");
 ?>
